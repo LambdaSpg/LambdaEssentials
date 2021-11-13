@@ -1,0 +1,41 @@
+name: LambdaEssentials
+version: '${project.version}'
+main: de.lambdaspg.lambdaessentials.LambdaEssentials
+api-version: 1.16
+authors: [ LambdaSpg ]
+description: All essential commands for spigot
+
+commands:
+  gm:
+    description: change gamemode
+    permission: lambda.cmd.gm
+  heal:
+    description: heals you
+    permission: lambda.cmd.heal
+  fly:
+    description: fliegen
+    permission: lambda.cmd.fly
+  commandspy:
+    description: commandspy
+    permission: lambda.cmd.cmdspy
+    aliases: [cmdspy]
+  speed:
+    description: speed
+    permission: lambda.cmd.speed
+  enderchest:
+    description: enderchest
+    permission: lambda.cmd.enderchest
+    aliases: [ec]
+  broadcast:
+    description: broadcast
+    permission: lambda.cmd.broadcast
+    aliases: [bc]
+  tphere:
+    description: teleport here
+    permission: lambda.cmd.tphere
+  tpall:
+    description: teleports everyone to you
+    permission: lambda.cmd.tpall
+  discord:
+    description: discord link
+    permission: lambda.cmd.discord
