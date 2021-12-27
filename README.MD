@@ -20,3 +20,4 @@ Very easy to use, just drag the file into the plugins folder and start the serve
 - lambda.cmd.speed
 - lambda.vanish
 - lambda.vanish.bypass
+
