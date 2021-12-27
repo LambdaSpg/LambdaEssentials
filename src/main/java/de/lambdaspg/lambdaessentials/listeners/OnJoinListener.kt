@@ -9,6 +9,6 @@ class OnJoinListener : Listener {
     @EventHandler
     fun onJoin(e: PlayerJoinEvent){
         e.joinMessage = ""
-        MessageManager.sendPlayerInfo("Willkommen auf LegitGames!", e.player)
+        MessageManager.sendPlayerInfo("Willkommen auf ${MessageManager.server}", e.player)
     }
 }

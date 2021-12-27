@@ -18,11 +18,12 @@ class SpeedCommand : CommandExecutor {
                     val speed: Int = try {
                         args[0].toInt()
                     } catch (e: NumberFormatException) {
+                        MessageManager.sendPlayerError("Bitte verwende /speed 1-9", player)
                         return false
                     }
 
                     if(speed in 1..9){
-                        player.flySpeed = (speed.toFloat() / 10) + 0.1f;
+                        player.flySpeed = (speed.toFloat() / 10);
                         player.walkSpeed = (speed.toFloat() / 10) + 0.1f;
                     }else {
                         MessageManager.sendPlayerError("Bitte verwende /speed 1-9", player)

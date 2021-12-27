@@ -10,7 +10,7 @@ class CommandBlocker : Listener {
     @EventHandler
     fun onCommand(e: PlayerCommandPreprocessEvent){
 
-        for(blocked in LambdaEssentials.commandblocklist){
+        for(blocked in LambdaEssentials.commandBlockList){
             if(e.message.startsWith(blocked)){
                 if(!(e.player.hasPermission("lambda.cmdblocker.bypass"))){
                     MessageManager.sendPlayerError("Dieser Command ist deaktiviert", e.player)

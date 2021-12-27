@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent
 class CommandSpyListener : Listener {
     @EventHandler
     fun onCommand(e: PlayerCommandPreprocessEvent){
-        for(s in LambdaEssentials.vanishlist){
+        for(s in LambdaEssentials.cmdSpyList){
             if(e.player.name != s.name){
                 s.sendMessage(MessageManager.prefix + " §6CommandSpy ${e.player.name} |§e ${e.message}")
             }

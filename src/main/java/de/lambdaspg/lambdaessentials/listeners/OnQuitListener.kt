@@ -1,6 +1,7 @@
 package de.lambdaspg.lambdaessentials.listeners
 
 import de.lambdaspg.lambdaessentials.LambdaEssentials
+import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerQuitEvent
@@ -8,7 +9,13 @@ import org.bukkit.event.player.PlayerQuitEvent
 class OnQuitListener : Listener {
     @EventHandler
     fun onQuit(e: PlayerQuitEvent){
-        if(LambdaEssentials.vanishlist.contains(e.player)) LambdaEssentials.vanishlist.remove(e.player)
+        if(LambdaEssentials.vanishList.contains(e.player)) {
+            LambdaEssentials.vanishList.remove(e.player)
+            for(all in Bukkit.getOnlinePlayers()){
+                all.showPlayer(LambdaEssentials.getInstance(), e.player)
+            }
+        }
+        if(LambdaEssentials.cmdSpyList.contains(e.player)) LambdaEssentials.cmdSpyList.remove(e.player)
         e.quitMessage = ""
     }
 }

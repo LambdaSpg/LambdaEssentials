@@ -2,6 +2,7 @@ package de.lambdaspg.lambdaessentials.commands
 
 import de.lambdaspg.lambdaessentials.LambdaEssentials
 import de.lambdaspg.lambdaessentials.MessageManager
+import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -12,8 +13,22 @@ class VanishCommand : CommandExecutor {
         if(sender is Player) {
             val p: Player = sender;
             if(p.hasPermission("lambda.vanish")){
-                if(LambdaEssentials.vanishlist.contains(p)){
+                val contains = LambdaEssentials.vanishList.contains(p)
 
+                MessageManager.sendPlayerInfo("Vanish " + if(contains) "§4deaktiviert!" else "§aaktiviert!", p)
+                if(contains) {
+                    LambdaEssentials.vanishList.remove(p);
+
+                    for(all: Player in Bukkit.getOnlinePlayers()){
+                        all.showPlayer(LambdaEssentials.getInstance(), p)
+                    }
+                }else {
+                    LambdaEssentials.vanishList.add(p);
+                    for(all: Player in Bukkit.getOnlinePlayers()){
+                        if(!(all.hasPermission("lambda.vanish.bypass"))) {
+                            all.hidePlayer(LambdaEssentials.getInstance(), p)
+                        }
+                    }
                 }
             }
         }
