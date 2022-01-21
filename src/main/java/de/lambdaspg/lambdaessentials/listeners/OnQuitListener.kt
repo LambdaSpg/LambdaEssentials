@@ -1,6 +1,7 @@
 package de.lambdaspg.lambdaessentials.listeners
 
 import de.lambdaspg.lambdaessentials.LambdaEssentials
+import de.lambdaspg.lambdaessentials.MessageManager
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -17,5 +18,6 @@ class OnQuitListener : Listener {
         }
         if(LambdaEssentials.cmdSpyList.contains(e.player)) LambdaEssentials.cmdSpyList.remove(e.player)
         e.quitMessage = ""
+        Bukkit.broadcastMessage("${MessageManager.info}${e.player.name} hat uns verlassen!")
     }
 }

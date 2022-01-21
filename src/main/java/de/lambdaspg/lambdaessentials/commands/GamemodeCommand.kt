@@ -26,19 +26,19 @@ class GamemodeCommand : CommandExecutor {
                     when (mode) {
                         0 ->{
                             gameMode = GameMode.SURVIVAL
-                            MessageManager.sendPlayerInfo("Du bist nun im §aSURVIVAL§e mode!", player)
+                            MessageManager.sendPlayerInfo("Du bist nun im §bSURVIVAL§8 mode!", player)
                         }
                         1 -> {
                             gameMode = GameMode.CREATIVE
-                            MessageManager.sendPlayerInfo("Du bist nun im §aCREATIVE§e mode!", player)
+                            MessageManager.sendPlayerInfo("Du bist nun im §bCREATIVE§8 mode!", player)
                         }
                         2 -> {
                             gameMode = GameMode.ADVENTURE
-                            MessageManager.sendPlayerInfo("Du bist nun im §aADVENTURE§e mode!", player)
+                            MessageManager.sendPlayerInfo("Du bist nun im §bADVENTURE§8 mode!", player)
                         }
                         3 -> {
                             gameMode = GameMode.SPECTATOR
-                            MessageManager.sendPlayerInfo("Du bist nun im §aSPECTATOR§e mode!", player)
+                            MessageManager.sendPlayerInfo("Du bist nun im §bSPECTATOR§8 mode!", player)
                         }
                         else ->{
                             MessageManager.sendPlayerError("Bitte verwende /gm <0/1/2/3>", player)

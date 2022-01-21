@@ -12,7 +12,7 @@ class CommandSpyCommand : CommandExecutor{
         if(sender is Player){
             val p: Player = sender;
             if(p.hasPermission("lambda.cmd.cmdspy")){
-                MessageManager.sendPlayerInfo("CommandSpy " + if(LambdaEssentials.cmdSpyList.contains(p)) "§4deaktiviert!" else "§aaktiviert!", p)
+                MessageManager.sendPlayerInfo("CommandSpy " + if(LambdaEssentials.cmdSpyList.contains(p)) "§bdeaktiviert!" else "§baktiviert!", p)
                 if(LambdaEssentials.cmdSpyList.contains(p)) {
                     LambdaEssentials.cmdSpyList.remove(p);
                 }else {

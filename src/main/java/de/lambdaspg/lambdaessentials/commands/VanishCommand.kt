@@ -15,7 +15,7 @@ class VanishCommand : CommandExecutor {
             if(p.hasPermission("lambda.vanish")){
                 val contains = LambdaEssentials.vanishList.contains(p)
 
-                MessageManager.sendPlayerInfo("Vanish " + if(contains) "§4deaktiviert!" else "§aaktiviert!", p)
+                MessageManager.sendPlayerInfo("Vanish " + if(contains) "§bdeaktiviert!" else "§baktiviert!", p)
                 if(contains) {
                     LambdaEssentials.vanishList.remove(p);
 
@@ -30,7 +30,7 @@ class VanishCommand : CommandExecutor {
                         }
                     }
                 }
-            }
+            }else MessageManager.noPermission(p);
         }
 
         return false

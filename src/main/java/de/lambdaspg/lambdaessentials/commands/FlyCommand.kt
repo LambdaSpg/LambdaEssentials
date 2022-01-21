@@ -12,7 +12,7 @@ class FlyCommand : CommandExecutor {
         if(sender is Player){
             val p: Player = sender
             if(p.hasPermission("lambda.cmd.fly")){
-                sendPlayerInfo("Du kannst nun" + if (p.allowFlight) " nicht mehr fliegen!" else " fliegen!", p)
+                sendPlayerInfo("Du kannst nun" + if (p.allowFlight) " §bnicht mehr §8fliegen!" else " §bfliegen!", p)
                 p.isFlying = false
                 p.allowFlight = !p.allowFlight;
             }else {

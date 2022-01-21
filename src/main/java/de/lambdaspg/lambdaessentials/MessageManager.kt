@@ -4,11 +4,11 @@ import org.bukkit.Bukkit.getServer
 import org.bukkit.entity.Player
 
  object MessageManager {
-     const val server = "§9LegitGames |§7"
-     const val prefix = "§9LegitSystem |§7"
+     const val server = "§c§lLegitGames§r"
+     const val prefix = "§c§lLegitGames §r§8»"
 
      const val good = "$prefix§2 "
-     const val info = "$prefix§e "
+     const val info = "$prefix§7 "
      const val error = "$prefix§4 "
 
      fun sendConsoleGood(text: String){
